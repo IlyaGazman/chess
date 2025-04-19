@@ -1,0 +1,20 @@
+- Verify that pieces can only move according to their movement patterns
+- Test that a player can only move pieces of their own color
+- Confirm that the model enforces turn-based play correctly
+- Validate that the model prevents illegal moves
+- Test that a player cannot move when the game is over
+- Verify that all draw conditions are correctly enforced
+- Confirm that the model handles edge cases like discovered checks correctly
+- Validate that the model prevents illegal pawn movements correctly
+- Test that the model enforces the touch-move rule if implemented
+- Verify that the model correctly handles promotion requirements
+- Confirm that the model prevents moving into check
+- Validate that the model updates game status after every move
+- Test that the model correctly handles ambiguous notation if algebraic notation is implemented
+- Verify that the model handles all special rules like en passant and castling correctly
+- Confirm that the model enforces proper king behavior in endgame scenarios
+- Validate that the model correctly detects insufficient material draws
+- Test that the model correctly identifies legal moves in complex positions
+- Verify that the model prevents illegal castling under all restricted conditions
+- Confirm that the model correctly updates piece properties (like "moved" status) after moves
+- Test that the model enforces pawn promotion when a pawn reaches the opponent's back rank

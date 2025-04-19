@@ -1,0 +1,20 @@
+- Verify that pawns can move one square forward when the destination is empty
+- Validate that pawns can move two squares forward from their starting position
+- Confirm that pawns cannot move forward when blocked by another piece
+- Verify that pawns can capture diagonally one square forward
+- Test that pawns cannot capture pieces directly in front of them
+- Validate that knights can move in an L-shape (2 squares in one direction, 1 square perpendicular)
+- Ensure that knights can jump over other pieces
+- Verify that bishops can move diagonally any number of squares when the path is clear
+- Confirm that bishops cannot move through other pieces
+- Validate that rooks can move horizontally or vertically any number of squares when the path is clear
+- Ensure that rooks cannot move through other pieces
+- Verify that queens can move diagonally, horizontally, or vertically any number of squares when the path is clear
+- Confirm that queens cannot move through other pieces
+- Validate that kings can move one square in any direction
+- Ensure that pieces cannot move off the board
+- Verify that pieces can capture opponent pieces but not friendly pieces
+- Test that the "moved" property is updated correctly after a piece moves
+- Validate that rooks participate correctly in castling moves
+- Confirm that pawns promote correctly when reaching the opponent's back rank
+- Ensure that en passant captures work correctly after a pawn's double move

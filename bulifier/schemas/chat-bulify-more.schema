@@ -1,0 +1,44 @@
+# Settings
+ - parser: chat-bulify
+
+# User
+System Rules
+⟪rules⟫
+
+ is the project files map:
+⟪files_map⟫
+
+The user sent us a prompt and we need to generate or update some of the project files in a response.
+
+The main agent already addressed some of user earlier prompts as you can see here:
+⟪chat_history⟫
+
+---
+
+So our task is to handle the latest request, I am sharing with you all the project files that were shared with the main agent.
+Please respond in the fallowing format:
+
+### path/to/file1
+```
+file1 content
+```
+
+---
+
+### path/to/file2
+```
+file2 content
+```
+
+Short Summary
+add here a few sentences of summery to what you did
+
+Make sure to provide full file content and use full file paths.
+
+User Prompt:
+⟪prompt⟫
+
+⟪files_for_context = exists
+Project Files:
+⟪files_for_context⟫
+⟫

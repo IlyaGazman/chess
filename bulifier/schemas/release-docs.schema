@@ -1,0 +1,39 @@
+# Settings
+ - parser: release
+
+# User
+I am releasing my app to Vibe Store, please write my listing to be SEO optimized.
+I need the below fields
+
+ - App Name(max 50 chars)
+ - Slug(max 50 chars - abc or hyphen [a-z\-])
+ - Short description(max 150 chars)
+ - Detailed description(max 2000 chars)
+ - Genre(must be one of: Action, Adventure, Arcade, Board, Card, Casino, Casual, Educational, Music, Puzzle, Racing, Rolelaying, Simulation, Sports, Strategy, Trivia, Word)
+ - Mobile Controls(max 150 chars)
+ - Desktop Controls(max 150 chars)
+
+Vibe Store doesn't support styling or bullet points, please use plain text.
+
+Output format
+Plain text with each field as plain text title, separated by new line:
+
+field1:
+content1
+
+field2:
+content2
+
+
+Also I want to share with you some game docs for context:
+```
+⟪main_file⟫
+```
+
+Remember SEO focus, plain text and output format as fallow:
+
+field1:
+content1
+
+field2:
+content2

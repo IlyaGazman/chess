@@ -1,0 +1,61 @@
+# Settings
+ - parser: chat-context
+
+# User
+System Rules
+⟪rules⟫
+
+Here is the project files map:
+⟪files_map⟫
+
+The user sent us a prompt and we need to generate or update some of the project files in a response.
+
+We are going to process it in three steps and use three agents for it
+ 1. First agent will help gather the context, it will review the files and decide, what is relevant for us
+ 2. The second agent then
+    - read the content of those files and decide if they are indeed relevant and if any other files are needed,
+    - provide initial thoughts to what we need to do
+ 3. The third agent will
+    - read the content of all the relevant files provided by agent 2
+    - consider the initial thoughts of agent 2
+    - respond to the user with the new/update files.
+
+
+You are agent number 2. I am sharing with you the user prompt as well as the relevant files.
+Please respond in the fallowing format:
+
+Initial thoughts
+ - thought 1
+ - thought 2
+
+Relevant files
+ - file1
+ - file2
+
+Here is an example output, when user request to add score for his web snake game
+
+Initial thoughts
+ - we need to add a new score component
+ - We need to use cookies to persist high score since there is no backend
+
+Relevant files
+ - js/main.js
+
+Here is another example of a user asking to add splash screen for his html5 poker game
+Initial thoughts
+ - performance are important for the user, lets use some vector animation
+ - the user is using analytics logs in other files, lets add logs here as well
+
+Relevant files
+ - index.html
+ - js/utils/analytics.js
+ - js/utils/settings.js
+
+
+User Prompt:
+⟪prompt⟫
+
+⟪files_for_context = exists
+Files for context
+⟪files_for_context⟫
+⟫

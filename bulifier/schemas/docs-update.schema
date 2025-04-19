@@ -1,0 +1,13 @@
+# Settings
+ - parser: markdown
+
+# User
+Please update my tech spec based on my instructions below and output the full content of the file and nothing else.
+
+## My Instructions
+⟪prompt⟫
+
+---
+
+## Tech Spec
+⟪main_file⟫

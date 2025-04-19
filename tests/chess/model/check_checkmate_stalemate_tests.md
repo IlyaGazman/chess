@@ -1,0 +1,15 @@
+- Verify that the model correctly identifies when a king is in check
+- Test that the model prevents moves that would leave the king in check
+- Confirm that the model recognizes checkmate when the king is in check and has no valid moves
+- Validate that the model recognizes stalemate when the king is not in check but has no valid moves
+- Verify that the game status is updated correctly after each move
+- Test that a player cannot make moves when in checkmate
+- Ensure that all possible moves to get out of check are identified
+- Validate that capturing a checking piece is recognized as a valid response to check
+- Confirm that blocking a check with another piece is recognized as a valid response
+- Test that moving the king away from check is recognized as a valid response
+- Verify that multiple checking pieces require the king to move
+- Ensure that pinned pieces (those that would expose the king to check if moved) cannot move
+- Validate that the isKingInCheck method correctly identifies check from all piece types
+- Confirm that the game status changes appropriately when entering and leaving check states
+- Test that a player cannot castle through, out of, or into check

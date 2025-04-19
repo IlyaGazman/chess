@@ -1,0 +1,20 @@
+- Verify that the model tracks the current player correctly
+- Test that the player alternates after each valid move
+- Confirm that the move history records all moves correctly
+- Validate that the undoMove method restores the previous board state correctly
+- Test that halfmove clock increments and resets according to the 50-move rule
+- Verify that the fullmove number increments correctly after black's move
+- Confirm that the getGameState method returns a complete and accurate game state
+- Validate that the loadGameState method correctly restores a saved game state
+- Test that the exportFEN method generates correct FEN strings for various positions
+- Verify that the importFEN method correctly sets up the board from a FEN string
+- Confirm that undoing a move properly restores castling rights
+- Validate that undoing a move properly restores en passant opportunities
+- Test that threefold repetition is correctly detected after the same position occurs three times
+- Verify that insufficient material draws are correctly identified
+- Confirm that the game status is correctly updated after state changes
+- Validate that the clone functionality creates a deep copy of the board
+- Test that getValidMoves returns all legal moves for a piece
+- Verify that the 50-move rule is correctly applied as a draw condition
+- Confirm that the threefold repetition rule is correctly applied as a draw condition
+- Test that the game state maintains integrity through complex sequences of moves

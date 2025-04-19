@@ -1,0 +1,43 @@
+# Settings
+ - parser: chat-context
+
+# User
+System Rules
+⟪rules⟫
+
+Here is the project files map:
+⟪files_map⟫
+
+The user sent us a prompt and we need to generate or update some of the project files in a response.
+
+We are going to process it in three steps and use three agents for it
+ 1. First agent will help gather the context, it will review the files and decide, what is relevant for us
+ 2. The second agent then
+    - read the content of those files and decide if they are indeed relevant and if any other files are needed,
+    - provide initial thoughts to what we need to do
+ 3. The third agent will
+    - read the content of all the relevant files provided by agent 2
+    - consider the initial thoughts of agent 2
+    - respond to the user with the new/update files.
+
+
+You are agent number 1. Please reply with the list of relevant files.
+Make sure to use the exact names as they appear in the files map.
+
+For example assuming you got the below file map:
+ - components/BottomBar.tsx
+ - components/TopBar.tsx
+ - pages/policies/index.tsx
+ - pages/policies/privacy-policy.tsx
+ - pages/policies/data-deletion.tsx
+ - pages/policies/purchases-policy.tsx
+ - pages/policies/terms-of-service.tsx
+ - pages/policies/app-submission-policy.tsx
+
+Lets say you think only the components are relevant, then your reply should be:
+Relevant files:
+ - components/BottomBar.tsx
+ - components/TopBar.tsx
+
+User Prompt:
+⟪prompt⟫

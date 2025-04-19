@@ -1,0 +1,84 @@
+# Settings
+ - parser: code
+
+# User
+System Rules
+⟪rules⟫
+
+I am working on the ⟪project_name⟫ project.
+Your task is to create a model using pure ES6+ with no dependencies, and a test planning docs based on the user request.
+The user will describe the model and its core logic, and you must output:
+
+ - **The model:**
+    - A well-defined model that implements the business logic described by the user.
+    - Determine the appropriate file path and extension (e.g., `poker/model.js`).
+
+ - **Test Planning Documentation:**
+    - **Identify Key Functional Areas:** Analyze the requested model features and identify distinct logical areas or themes (e.g., deck management, player state, turn progression, round handling).
+    - **Create Thematic Test Files:** For *each* major functional area identified, create a separate markdown test documentation file.
+    - **File Naming:** Name each test file descriptively based on its theme, using snake_case and appending `_tests.md`. Place these files in the `tests/{path}/{model_filename_without_extension}/` directory, where `{path}` corresponds to the directory used for the model file, and `{model_filename_without_extension}` corresponds to the model's filename without its extension. Examples:
+        - Model at `poker/model.js`: Test files go in `tests/poker/model/`.
+        - Example test files:
+            - `tests/poker/model/deck_management_tests.md`
+            - `tests/poker/model/player_state_tests.md`
+            - `tests/poker/model/turn_logic_tests.md`
+            - `tests/poker/model/round_management_tests.md`
+    - **Comprehensive Scenarios:** Within each thematic test file, list *at least 5 detailed* test scenarios relevant to that specific functional area. Aim for thorough coverage for the theme. More than 5 tests per file is encouraged if needed for proper coverage of the theme.
+    - **Scenario Format:** Each test scenario must be a short single sentence starting with a hyphen and space (e.g., `- validate shuffling results in a different card order`).
+
+Your response format should be as follows (include *only* the files generated, list test files thematically):
+
+### path/to/model.ext
+```
+model content
+```
+
+---
+
+### tests/{path}/{model_filename_without_extension}/theme_1_tests.md  # Example: tests/poker/model/deck_management_tests.md
+```
+# Tests for Theme 1 (e.g., Deck Management)
+- Test scenario 1 for theme 1
+- Test scenario 2 for theme 1
+- Test scenario 3 for theme 1
+- Test scenario 4 for theme 1
+- Test scenario 5 for theme 1
+# (Add more tests for theme 1 if needed for good coverage)
+```
+
+---
+
+### tests/{path}/{model_filename_without_extension}/theme_2_tests.md  # Example: tests/poker/model/player_state_tests.md
+```
+# Tests for Theme 2 (e.g., Player State)
+- Test scenario 1 for theme 2
+- Test scenario 2 for theme 2
+- Test scenario 3 for theme 2
+- Test scenario 4 for theme 2
+- Test scenario 5 for theme 2
+# (Add more tests for theme 2 if needed for good coverage)
+```
+
+(Include additional thematic test files as needed, following the naming convention, e.g., tests/{path}/{model_filename_without_extension}/turn_logic_tests.md)
+
+
+**Strict Instructions:**
+ - Do **not** include any additional text, explanations, apologies, or introductory sentences outside the specified file blocks.
+ - Use only the full file paths and the complete, raw content of each file.
+ - Ensure code comments are clear and professional, as expert developers will review your work.
+
+⟪all_files_context = exists
+Also I am sharing with you relevant project files, if you choose to update any of them please output the full content using the format above.
+⟪all_files_context⟫
+⟫
+
+Summary:
+- Respond *only* with the full content of the generated files using the specified format.
+- Use full path file names, including the correct extension for the model.
+- Create *multiple* test documentation files in `tests/{path}/{model_filename_without_extension}/`, one for each major functional theme identified in the model. The directory structure for tests uses the model's file path and its name (without extension).
+- Name test files descriptively based on their theme (`theme_name_tests.md`).
+- Include *at least 5 detailed* test scenarios per thematic file, adding more if needed for good coverage of the theme.
+- The model must have no dependencies and use pure ES6+
+
+And now, here is my request:
+⟪prompt⟫

@@ -1,0 +1,10 @@
+- Verify the chess board is created as an 8x8 grid
+- Validate that white pawns are correctly positioned on the 6th row (index 6)
+- Verify that black pawns are correctly positioned on the 1st row (index 1)
+- Confirm that white pieces (rooks, knights, bishops, queen, king) are correctly positioned on the 7th row (index 7)
+- Validate that black pieces (rooks, knights, bishops, queen, king) are correctly positioned on the 0th row (index 0)
+- Ensure that all pieces have correct initial properties (type, color, moved status where applicable)
+- Verify the board reset method returns the board to the starting position
+- Test that the board is properly initialized when creating a new instance of the model
+- Validate that the empty squares in the initialized board are null
+- Confirm that kings are placed in their correct starting positions (white at e1, black at e8)

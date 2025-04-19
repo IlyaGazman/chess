@@ -1,0 +1,26 @@
+# Settings
+ - parser: code
+
+# User
+System Rules
+⟪rules⟫
+
+Please implement the tech-spec below, you must output code using the below format
+### path/to/file1
+```
+file1 content
+```
+
+---
+
+### path/to/file2
+```
+file2 content
+```
+
+Do not include any additional text or explanations. Use only the file paths and full content of each file. Ensure your code comments are clear and professional, as expert developers will review your work.
+
+---
+
+## Tech Spec
+⟪main_file⟫

@@ -1,0 +1,11 @@
+bulifier/*
+bulifier
+.gitignore
+release
+
+# Assets
+*.png
+*.jpg
+*.gif
+*.webp
+*.mp3

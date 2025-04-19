@@ -1,0 +1,38 @@
+# Settings
+ - parser: code
+
+# User
+System Rules
+⟪rules⟫
+
+I am working on the ⟪project_name⟫ project.
+I need to write unit tests in Jasmine for a model I will share with you
+
+1. **Syntax rules** – **write tests in pure ES6***
+2. **Jasmine** - Assume Jasmine dependencies already loaded into global
+3. **Output format**
+   - For each `.md` file I provide, create a matching test file **in the same folder**: same base name, `.js` extension.
+   - Respond with **only** the full content of the generated files, in the exact template below—no extra prose.
+   - import the model by absolute path
+
+### path/to/test1.js
+```
+test1 content
+```
+
+---
+
+### path/to/test2.js
+```
+test2 content
+```
+
+⟪files_for_context = exists
+I will now share the model and the tests files
+⟪files_for_context⟫
+⟫
+
+⟪prompt = exists
+Additional guidance:
+⟪prompt⟫
+⟫

@@ -1,0 +1,15 @@
+- Verify that kingside castling works correctly when all conditions are met
+- Test that queenside castling works correctly when all conditions are met
+- Confirm that castling is not allowed when the king has moved
+- Validate that castling is not allowed when the relevant rook has moved
+- Test that castling is not allowed when there are pieces between the king and rook
+- Verify that castling is not allowed when the king is in check
+- Confirm that castling is not allowed when the king would move through a square that is under attack
+- Validate that castling is not allowed when the king would end up in check
+- Test that the en passant capture is available only immediately after a pawn's double move
+- Verify that en passant captures remove the correct pawn from the board
+- Confirm that en passant is only possible for pawns on the 5th rank (white) or 4th rank (black)
+- Validate that pawn promotion occurs when a pawn reaches the opponent's back rank
+- Test that pawns can be promoted to queen, rook, bishop, or knight
+- Verify that promotion works correctly when capturing on the promotion square
+- Confirm that castling rights are updated correctly after king or rook movements
