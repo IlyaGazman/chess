@@ -1,0 +1,209 @@
+{"total":97,"passed":71,"failed":26}
+
+failed: ChessModel - Rules Enforcement should prevent illegal castling under all restricted conditions
+❌ Expected false to be true.
+        at /tests/chess/model/rules_enforcement_tests.js:229:51)
+    
+
+failed: ChessModel - Rules Enforcement should update game status after every move
+❌ Expected 'active' to be 'check'.
+        at /tests/chess/model/rules_enforcement_tests.js:173:30)
+    
+
+failed: ChessModel - Rules Enforcement should enforce promotion requirements
+❌ Expected false to be true.
+        at /tests/chess/model/rules_enforcement_tests.js:140:38)
+    
+❌ Expected undefined to be 'queen'.
+        at /tests/chess/model/rules_enforcement_tests.js:141:47)
+    
+
+failed: ChessModel - Rules Enforcement should handle discovered checks correctly (allow check if move is legal
+❌ Expected false to be true.
+        at /tests/chess/model/rules_enforcement_tests.js:105:21)
+    
+❌ Expected 'white' to be 'black'.
+        at /tests/chess/model/rules_enforcement_tests.js:106:33)
+    
+❌ Expected false to be true.
+        at /tests/chess/model/rules_enforcement_tests.js:107:42)
+    
+❌ Expected 'active' to be 'check'.
+        at /tests/chess/model/rules_enforcement_tests.js:108:30)
+    
+
+failed: ChessModel - Rules Enforcement should enforce pawn promotion when a pawn reaches the opponent's back rank
+❌ Expected false to be true.
+        at /tests/chess/model/rules_enforcement_tests.js:251:68)
+    
+❌ Expected undefined to be 'queen'.
+        at /tests/chess/model/rules_enforcement_tests.js:252:37)
+    
+
+failed: ChessModel - Rules Enforcement should prevent a player from moving when the game is over
+❌ Expected 'checkmate' to be 'stalemate'.
+        at /tests/chess/model/rules_enforcement_tests.js:68:30)
+    
+
+failed: ChessModel - Special Moves should not allow castling when the king would move through a square that is under attack
+❌ Expected false to be true.
+        at /tests/chess/model/special_moves_tests.js:107:51)
+    
+
+failed: ChessModel - Special Moves should update castling rights correctly after king or rook movements
+❌ Expected true to be false.
+        at /tests/chess/model/special_moves_tests.js:274:49)
+    
+
+failed: ChessModel - Special Moves should allow promotion to queen, rook, bishop, or knight
+❌ Expected undefined to be 'queen'.
+        at /tests/chess/model/special_moves_tests.js:223:47)
+    
+❌ Expected undefined to be 'knight'.
+        at /tests/chess/model/special_moves_tests.js:238:47)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should change game status appropriately when entering and leaving check states
+❌ Expected true to be false.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:230:43)
+    
+❌ Expected 'check' to be 'active'.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:231:31)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should correctly identify check from all piece types
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:194:42)
+    
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:204:42)
+    
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:210:42)
+    
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:215:42)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should prevent moves that leave the king in check
+❌ Expected true to be false.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:23:38)
+    
+❌ Expected undefined to be 'rook'.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:24:51)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should recognize stalemate when the king is not in check but has no valid moves
+❌ Expected true to be false.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:44:42)
+    
+❌ Expected true to be false.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:45:45)
+    
+❌ Expected 'check' to be 'stalemate'.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:46:30)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should update the game status correctly after each move
+❌ Expected 'active' to be 'check'.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:71:30)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should recognize moving the king away from check as a valid response
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:148:67)
+    
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:149:68)
+    
+❌ Expected true to be false.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:150:42)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should identify all possible moves to get out of check
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:112:67)
+    
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:113:67)
+    
+❌ Expected 1 to be 2.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:114:30)
+    
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:117:67)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should recognize capturing a checking piece as a valid response to check
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:126:69)
+    
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:127:68)
+    
+❌ Expected true to be false.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:128:42)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should not allow castling through, out of, or into check
+❌ Expected false to be true.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:243:51)
+    
+
+failed: ChessModel - Check, Checkmate, Stalemate should prevent pinned pieces (those that would expose the king to check if moved) from moving
+❌ Expected 2 to be 0.
+        at /tests/chess/model/check_checkmate_stalemate_tests.js:187:30)
+    
+
+failed: ChessModel - Game State Management should return all legal moves for a piece using getValidMoves
+❌ Expected 2 to be 0.
+        at /tests/chess/model/game_state_management_tests.js:336:36)
+    
+
+failed: ChessModel - Game State Management should maintain game state integrity through complex sequences of moves and undos
+❌ Expected $.board[1][3].moved = true to equal false.
+        at /tests/chess/model/game_state_management_tests.js:389:36)
+    
+❌ Expected $.board[1][0].moved = true to equal false.
+Expected $.board[1][3].moved = true to equal false.
+Expected $.board[1][4].moved = true to equal false.
+Expected $.board[6][4].moved = true to equal false.
+        at /tests/chess/model/game_state_management_tests.js:398:36)
+    
+
+failed: ChessModel - Game State Management should return a complete and accurate game state via getGameState
+❌ Expected Object({ row: 2, col: 4 }) to be null.
+        at /tests/chess/model/game_state_management_tests.js:110:35)
+    
+
+failed: ChessModel - Game State Management should detect threefold repetition (needs complex setup/mocking or sequence
+❌ Expected 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -' to equal 'rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq -'.
+        at /tests/chess/model/game_state_management_tests.js:250:25)
+    
+
+failed: ChessModel - Game State Management should identify insufficient material draws correctly
+❌ Expected 'draw' to be 'active'.
+        at /tests/chess/model/game_state_management_tests.js:290:31)
+    
+
+failed: ChessModel - Game State Management should update the game status correctly after state changes like loadGameState or importFEN
+❌ Expected 'checkmate' to be 'stalemate'.
+        at /tests/chess/model/game_state_management_tests.js:300:30)
+    
+❌ Expected 'checkmate' to be 'active'.
+        at /tests/chess/model/game_state_management_tests.js:304:30)
+    
+
+failed: ChessModel - Piece Movement should handle pawn promotion correctly when reaching the opponent's back rank
+❌ Expected false to be true.
+        at /tests/chess/model/piece_movement_tests.js:248:38)
+    
+❌ Expected undefined to be 'queen'.
+        at /tests/chess/model/piece_movement_tests.js:249:47)
+    
+❌ Expected undefined to be 'white'.
+        at /tests/chess/model/piece_movement_tests.js:250:48)
+    
+❌ Expected Object({ type: 'pawn', color: 'white', moved: false }) to be null.
+        at /tests/chess/model/piece_movement_tests.js:251:45)
+    

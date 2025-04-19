@@ -174,17 +174,18 @@ export class ChessModel {
       this.enPassantTarget = { row: from.row + direction, col: from.col };
     }
 
-    // Move the piece
+    // Move the piece (promotion, if appropriate)
     if (specialMove && specialMove.type === 'pawnPromotion') {
+      // Place promoted piece at destination
       this.board[to.row][to.col] = {
         type: promotion || move.promotion || 'queen',
         color: movingPiece.color
       };
+      this.board[from.row][from.col] = null;
     } else {
       this.board[to.row][to.col] = movingPiece;
+      this.board[from.row][from.col] = null;
     }
-
-    this.board[from.row][from.col] = null;
 
     // Mark piece as moved for pieces that track this
     if (movingPiece.moved !== undefined) {
@@ -527,14 +528,20 @@ export class ChessModel {
       ) {
         // Only allow for the correct color and correct pawn position
         if (!attackOnly) {
-          moves.push({
-            from: { row, col },
-            to: { row: targetRow, col: targetCol },
-            specialMove: {
-              type: 'enPassant',
-              capturedPawn: { row: row, col: targetCol }
-            }
-          });
+          // Add rank check to only allow en passant for proper rank
+          if (
+            (color === 'white' && row === 3 && this.enPassantTarget.row === 2) ||
+            (color === 'black' && row === 4 && this.enPassantTarget.row === 5)
+          ) {
+            moves.push({
+              from: { row, col },
+              to: { row: targetRow, col: targetCol },
+              specialMove: {
+                type: 'enPassant',
+                capturedPawn: { row: row, col: targetCol }
+              }
+            });
+          }
         } else {
           moves.push({
             from: { row, col },
@@ -664,8 +671,8 @@ export class ChessModel {
             rook &&
             rook.type === 'rook' &&
             !rook.moved &&
-            !this.isSquareAttacked(row, col + 1, color === 'white' ? 'black' : 'white') &&
-            !this.isSquareAttacked(row, col + 2, color === 'white' ? 'black' : 'white')
+            this.isSquareAttacked(row, col + 1, color === 'white' ? 'black' : 'white') === false &&
+            this.isSquareAttacked(row, col + 2, color === 'white' ? 'black' : 'white') === false
           ) {
             moves.push({
               from: { row, col },
@@ -692,8 +699,8 @@ export class ChessModel {
             rook &&
             rook.type === 'rook' &&
             !rook.moved &&
-            !this.isSquareAttacked(row, col - 1, color === 'white' ? 'black' : 'white') &&
-            !this.isSquareAttacked(row, col - 2, color === 'white' ? 'black' : 'white')
+            this.isSquareAttacked(row, col - 1, color === 'white' ? 'black' : 'white') === false &&
+            this.isSquareAttacked(row, col - 2, color === 'white' ? 'black' : 'white') === false
           ) {
             moves.push({
               from: { row, col },
@@ -976,14 +983,16 @@ export class ChessModel {
     const lastMove = this.moveHistory.pop();
 
     // Restore piece to its original position
-    let movedPiece = this.board[lastMove.to.row][lastMove.to.col];
+    let movedPiece;
     if (
       lastMove.promotion &&
       lastMove.specialMove &&
       lastMove.specialMove.type === 'pawnPromotion'
     ) {
-      // Revert to pawn
-      movedPiece = { type: 'pawn', color: lastMove.color, moved: true };
+      // Revert to pawn with correct moved state
+      movedPiece = { type: 'pawn', color: lastMove.color, moved: lastMove.from.row !== (lastMove.color === 'white' ? 6 : 1) };
+    } else {
+      movedPiece = this.board[lastMove.to.row][lastMove.to.col];
     }
 
     this.board[lastMove.from.row][lastMove.from.col] = movedPiece;
@@ -1101,7 +1110,25 @@ export class ChessModel {
    * @returns {Array} - Cloned board
    */
   cloneBoard() {
-    return JSON.parse(JSON.stringify(this.board));
+    // Deep clone board preserving the 'moved' property with correct boolean/undefined
+    const result = [];
+    for (let row = 0; row < 8; row++) {
+      result[row] = [];
+      for (let col = 0; col < 8; col++) {
+        const piece = this.board[row][col];
+        if (piece) {
+          const newPiece = {
+            type: piece.type,
+            color: piece.color
+          };
+          if (typeof piece.moved !== 'undefined') newPiece.moved = piece.moved;
+          result[row][col] = newPiece;
+        } else {
+          result[row][col] = null;
+        }
+      }
+    }
+    return result;
   }
 
   /**
@@ -1126,12 +1153,29 @@ export class ChessModel {
    * @param {Object} state - Game state to load
    */
   loadGameState(state) {
-    this.board = state.board;
+    // Deep copy state.board and state.moveHistory to avoid aliasing issues
+    this.board = [];
+    for (let row = 0; row < 8; row++) {
+      this.board[row] = [];
+      for (let col = 0; col < 8; col++) {
+        const piece = state.board[row][col];
+        if (piece) {
+          const newPiece = {
+            type: piece.type,
+            color: piece.color
+          };
+          if (typeof piece.moved !== 'undefined') newPiece.moved = piece.moved;
+          this.board[row][col] = newPiece;
+        } else {
+          this.board[row][col] = null;
+        }
+      }
+    }
     this.currentPlayer = state.currentPlayer;
     this.gameStatus = state.gameStatus;
-    this.moveHistory = state.moveHistory;
-    this.enPassantTarget = state.enPassantTarget;
-    this.castlingRights = state.castlingRights;
+    this.moveHistory = state.moveHistory.map(m => ({ ...m }));
+    this.enPassantTarget = state.enPassantTarget ? { ...state.enPassantTarget } : null;
+    this.castlingRights = JSON.parse(JSON.stringify(state.castlingRights));
     this.halfMoveClock = state.halfMoveClock;
     this.fullMoveNumber = state.fullMoveNumber;
     this.updateGameStatus();
